@@ -2,9 +2,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 400px;
+  width: 500px;
   margin: 0 auto;
   padding: 10px;
   border-radius: 12px;
-  background-color: #f2f2f244;
+  background-color: #a1a1a1d8;
+}
+
+@media only screen and (max-width: 600px) {
+  .search-bar {
+    width: 80%;
+  }
 }

@@ -2,6 +2,8 @@
 
 Este é um projeto desenvolvido como parte do teste prático para a vaga de Frontend Developer na Amicci.
 
+[Link da aplicação](https://amicci-frontend-test.vercel.app/)
+
 ## Descrição
 
 A aplicação consiste na criação de uma SPA com as funções de: acessar latitude e longitude do usuário através da API do navegador, utilizando a API do Google Maps para obter a latitude e longitude a partir da busca da cidade, e por fim, o acesso dos dados momentâneos da região através da API da OpenWeather.

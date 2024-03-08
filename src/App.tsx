@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import './App.scss'
 import SearchBar from './components/Searchbar'
 import WeatherCard from './components/WeatherCard'
 import { getWeatherData, getCityLocation, getGeoLocation } from './services'
+import Parallax from './components/Parallax'
 
 function App() {
   const [location, setLocation] = React.useState<{
@@ -13,6 +14,7 @@ function App() {
     longitude: 0,
   })
   const [weatherData, setWeatherData] = React.useState<any>(null)
+  const parallaxRef = useRef<any>(null)
 
   const onSearch = (query: string) => {
     getCityLocation(query).then((data) => {
@@ -35,11 +37,13 @@ function App() {
 
   return (
     <div className='app'>
-      <SearchBar
-        onSearch={onSearch}
-        onGeoLocate={onGeoLocate}
-      />
-      <WeatherCard weatherData={weatherData} />
+      <Parallax ref={parallaxRef}>
+        <SearchBar
+          onSearch={onSearch}
+          onGeoLocate={onGeoLocate}
+        />
+        <WeatherCard weatherData={weatherData} />
+      </Parallax>
     </div>
   )
 }

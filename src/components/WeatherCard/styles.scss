@@ -1,30 +1,38 @@
-.weather-display {
-  padding: 16px;
+.weather-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
   border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px;
+  max-width: 300px;
 
   h2 {
     font-size: 1.5rem;
-    margin-bottom: 16px;
+    margin-bottom: 10px;
   }
 
-  .weather-info {
+  .weather-details {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 
-    .info-item {
-      flex: 1 1 50%;
-      padding: 8px;
-      margin-bottom: 8px;
-      border: 1px solid #ddd;
-      border-radius: 4px;
+    .temperature,
+    .description,
+    .humidity,
+    .wind-speed,
+    .rain,
+    .cloudiness {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
 
-      .info-label {
+      .label {
         font-weight: bold;
-        margin-right: 8px;
+        color: #333;
       }
 
-      .info-value {
-        color: #007bff;
+      .value {
+        color: #666;
       }
     }
   }

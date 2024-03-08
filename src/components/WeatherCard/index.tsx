@@ -3,43 +3,79 @@ import './styles.scss'
 
 interface WeatherCardProps {
   weatherData: {
-    temperature: number
-    climate: string
-    humidity: number
-    windSpeed: number
-    weatherDescription: string
-    cloudiness: number
-  }
+    coord: {
+      lon: number
+      lat: number
+    }
+    weather: {
+      id: number
+      main: string
+      description: string
+      icon: string
+    }[]
+    main: {
+      temp: number
+      feels_like: number
+      temp_min: number
+      temp_max: number
+      pressure: number
+      humidity: number
+    }
+    wind: {
+      speed: number
+      deg: number
+      gust: number
+    }
+    rain: {
+      '1h': number
+    }
+    clouds: {
+      all: number
+    }
+    sys: {
+      country: string
+      sunrise: number
+      sunset: number
+    }
+    name: string
+  } | null
 }
 
 const WeatherCard: React.FC<WeatherCardProps> = ({ weatherData }) => {
+  console.log(weatherData)
+  if (!weatherData) {
+    return null
+  }
+
   return (
-    <div className='weather-display'>
-      <h2>Weather Information</h2>
-      <div className='weather-info'>
-        <div className='info-item'>
-          <span className='info-label'>Temperature:</span>
-          <span className='info-value'>{weatherData.temperature}°C</span>
+    <div className='weather-card'>
+      <h2>
+        {weatherData.name} / {weatherData.sys.country}
+      </h2>
+      <div className='weather-details'>
+        <div className='temperature'>
+          <span className='label'>Temperature:</span>
+          <span className='value'>{weatherData.main.temp}°C</span>
         </div>
-        <div className='info-item'>
-          <span className='info-label'>Climate:</span>
-          <span className='info-value'>{weatherData.climate}</span>
+        <div className='description'>
+          <span className='label'>Weather:</span>
+          <span className='value'>{weatherData.weather[0].description}</span>
         </div>
-        <div className='info-item'>
-          <span className='info-label'>Weather Description:</span>
-          <span className='info-value'>{weatherData.weatherDescription}</span>
+        <div className='humidity'>
+          <span className='label'>Humidity:</span>
+          <span className='value'>{weatherData.main.humidity}%</span>
         </div>
-        <div className='info-item'>
-          <span className='info-label'>Humidity:</span>
-          <span className='info-value'>{weatherData.humidity}%</span>
+        <div className='wind-speed'>
+          <span className='label'>Wind Speed:</span>
+          <span className='value'>{weatherData.wind.speed} m/s</span>
         </div>
-        <div className='info-item'>
-          <span className='info-label'>Wind Speed:</span>
-          <span className='info-value'>{weatherData.windSpeed} m/s</span>
+        <div className='rain'>
+          <span className='label'>Rain (1h):</span>
+          <span className='value'>{weatherData.rain['1h']} mm</span>
         </div>
-        <div className='info-item'>
-          <span className='info-label'>Cloudiness:</span>
-          <span className='info-value'>{weatherData.cloudiness}%</span>
+        <div className='cloudiness'>
+          <span className='label'>Cloudiness:</span>
+          <span className='value'>{weatherData.clouds.all}%</span>
         </div>
       </div>
     </div>

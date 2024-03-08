@@ -1,46 +1,55 @@
-# Getting Started with Create React App
+# Teste Prático para Frontend Developer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este é um projeto desenvolvido como parte do teste prático para a vaga de Frontend Developer na Amicci.
 
-## Available Scripts
+## Descrição
 
-In the project directory, you can run:
+A aplicação consiste na criação de uma SPA com as funções de: acessar latitude e longitude do usuário através da API do navegador, utilizando a API do Google Maps para obter a latitude e longitude a partir da busca da cidade, e por fim, o acesso dos dados momentâneos da região através da API da OpenWeather.
 
-### `npm start`
+## Tecnologias Utilizadas
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- React
+- Typescript
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Pré-requisitos
 
-### `npm test`
+- Javascript
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Configuração
 
-### `npm run build`
+1. Clone o repositório:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+git clone https://github.com/gradaschi/amicci-frontend-test
+cd amicci-frontend-test
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Instale as dependências:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm install
+```
 
-### `npm run eject`
+3. Inicie o serviço:
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+```bash
+npm run start
+```
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Telas da aplicação
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Busca de cidade - web
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![alt text](/src/assets/img/web_1.png)
 
-## Learn More
+### Busca de cidade - mobile
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![alt text](/src/assets/img/mobile_1.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Retorno de cidade - web
+
+![alt text](/src/assets/img/web_2.png)
+
+### Retorno de cidade - mobile
+
+![alt text](/src/assets/img/mobile_2.png)

@@ -42,40 +42,51 @@ interface WeatherCardProps {
 }
 
 const WeatherCard: React.FC<WeatherCardProps> = ({ weatherData }) => {
-  console.log(weatherData)
   if (!weatherData) {
     return null
   }
 
+  const {
+    name,
+    sys: { country },
+    main: { temp, humidity },
+    weather,
+    wind,
+    rain,
+    clouds,
+  } = weatherData
+
   return (
     <div className='weather-card'>
       <h2>
-        {weatherData.name} / {weatherData.sys.country}
+        {name} / {country}
       </h2>
       <div className='weather-details'>
         <div className='temperature'>
           <span className='label'>Temperature:</span>
-          <span className='value'>{weatherData.main.temp}°C</span>
+          <span className='value'>{temp}°C</span>
         </div>
         <div className='description'>
           <span className='label'>Weather:</span>
-          <span className='value'>{weatherData.weather[0].description}</span>
+          <span className='value'>{weather?.[0]?.description}</span>
         </div>
         <div className='humidity'>
           <span className='label'>Humidity:</span>
-          <span className='value'>{weatherData.main.humidity}%</span>
+          <span className='value'>{humidity}%</span>
         </div>
         <div className='wind-speed'>
           <span className='label'>Wind Speed:</span>
-          <span className='value'>{weatherData.wind.speed} m/s</span>
+          <span className='value'>{wind?.speed} m/s</span>
         </div>
-        <div className='rain'>
-          <span className='label'>Rain (1h):</span>
-          <span className='value'>{weatherData.rain['1h']} mm</span>
-        </div>
+        {rain && (
+          <div className='rain'>
+            <span className='label'>Rain (1h):</span>
+            <span className='value'>{rain['1h'] || 0} mm</span>
+          </div>
+        )}
         <div className='cloudiness'>
           <span className='label'>Cloudiness:</span>
-          <span className='value'>{weatherData.clouds.all}%</span>
+          <span className='value'>{clouds?.all}%</span>
         </div>
       </div>
     </div>

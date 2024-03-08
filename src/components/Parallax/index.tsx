@@ -44,7 +44,7 @@ const Parallax: React.ForwardRefRenderFunction<
         style={{
           backgroundImage: `url(${stars})`,
           backgroundSize: 'cover',
-          animation: 'moveStars 100s linear infinite',
+          animation: 'moveStars 80s linear infinite',
           width: '120%',
         }}
       />

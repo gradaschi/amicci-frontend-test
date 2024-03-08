@@ -1,0 +1,43 @@
+.weather-card {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  padding: 20px 25px;
+  width: 400px;
+  margin: 0 auto;
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .weather-details {
+    display: flex;
+    flex-direction: column;
+
+    .temperature,
+    .description,
+    .humidity,
+    .wind-speed,
+    .rain,
+    .cloudiness {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+
+      .label {
+        font-weight: bold;
+        color: #333;
+      }
+
+      .value {
+        color: #666;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .weather-card {
+    width: 80%;
+  }
+}

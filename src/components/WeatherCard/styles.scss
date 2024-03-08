@@ -1,0 +1,31 @@
+.weather-display {
+  padding: 16px;
+  border-radius: 8px;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+
+  .weather-info {
+    display: flex;
+    flex-wrap: wrap;
+
+    .info-item {
+      flex: 1 1 50%;
+      padding: 8px;
+      margin-bottom: 8px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+
+      .info-label {
+        font-weight: bold;
+        margin-right: 8px;
+      }
+
+      .info-value {
+        color: #007bff;
+      }
+    }
+  }
+}

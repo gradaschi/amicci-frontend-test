@@ -1,8 +1,6 @@
 # Teste Prático para Frontend Developer
 
-Este é um projeto desenvolvido como parte do teste prático para a vaga de Frontend Developer na Amicci.
-
-[Link da aplicação](https://amicci-frontend-test.vercel.app/)
+Este é um projeto desenvolvido como parte da disciplina de tópicos especiais em computação
 
 ## Descrição
 
@@ -32,7 +30,14 @@ cd amicci-frontend-test
 npm install
 ```
 
-3. Inicie o serviço:
+3. Adicione suas chaves de API GOOGLE_MAPS e OPENWEATHER no arquivo .env respectivamente:
+
+```bash
+REACT_APP_GOOGLE_MAPS_API_KEY=''
+REACT_APP_OPENWEATHER_API_KEY=''
+```
+
+4. Inicie o serviço:
 
 ```bash
 npm run start
